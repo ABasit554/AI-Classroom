@@ -1,0 +1,25 @@
+.al-overlay {
+  position: fixed; inset: 0; background: rgba(15,23,42,.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 60;
+}
+.al-panel {
+  width: 520px; max-width: calc(100% - 2rem);
+  background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.al-head { display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; background: #0f1e3a; color: #fff; }
+.al-x { background: transparent; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+.al-form { padding: 20px; display: grid; gap: 14px; }
+.al-label { display: grid; gap: 6px; font-size: 14px; color: #334155; }
+.al-input {
+  border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px 12px; outline: none;
+}
+.al-input:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,.15); }
+.al-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 6px; }
+.al-btn { border: none; border-radius: 10px; padding: 10px 14px; cursor: pointer; }
+.al-btn.primary { background: #facc15; }
+.al-btn.ghost { background: #f1f5f9; }
+.al-error { margin: 12px 20px 0; color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; border-radius: 8px; padding: 8px 10px; }

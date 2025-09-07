@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  TEACHER
+  STUDENT
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(STUDENT)
+  createdAt    DateTime @default(now())
+}
+
+model Course {
+  id       String    @id @default(cuid())
+  code     String    @unique
+  title    String
+  section  String?
+  lectures Lecture[]
+}
+
+model Lecture {
+  id       String   @id @default(cuid())
+  title    String
+  date     DateTime @default(now())
+  fileUrl  String
+  course   Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  courseId String
+}
